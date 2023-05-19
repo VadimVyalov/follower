@@ -11,9 +11,10 @@ import './index.css';
 import './fonts/Montserrat-Regular.ttf';
 import './fonts/Montserrat-Medium.ttf';
 import './fonts/Montserrat-SemiBold.ttf';
+//  <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename="https://vadimvyalov.github.io/follover/">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <App />

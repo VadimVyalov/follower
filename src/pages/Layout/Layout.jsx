@@ -5,7 +5,7 @@ import {
   Header,
   MenuLink,
 } from '../../components/SharedLayout/SharedLayout';
-// import { Suspense } from 'react';
+import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
@@ -20,9 +20,9 @@ const Layout = () => {
       </Header>
 
       <main>
-        {/* <Suspense fallback={null}> */}
-        <Outlet />
-        {/* </Suspense> */}
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
         <ToastContainer />
       </main>
     </Container>
