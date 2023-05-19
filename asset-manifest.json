@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/follover/static/css/main.95580ab2.css",
-    "main.js": "/follover/static/js/main.cc092316.js",
-    "static/js/544.2b441a30.chunk.js": "/follover/static/js/544.2b441a30.chunk.js",
-    "static/js/10.f4b22fb3.chunk.js": "/follover/static/js/10.f4b22fb3.chunk.js",
-    "static/js/807.a7f6f99c.chunk.js": "/follover/static/js/807.a7f6f99c.chunk.js",
-    "static/media/Montserrat-SemiBold.ttf": "/follover/static/media/Montserrat-SemiBold.62b8eee010e3957d425f.ttf",
-    "static/media/Montserrat-Medium.ttf": "/follover/static/media/Montserrat-Medium.a281f04d4c8926e7dea1.ttf",
-    "static/media/Montserrat-Regular.ttf": "/follover/static/media/Montserrat-Regular.94bb495fba6077f669ed.ttf",
-    "static/media/following.png": "/follover/static/media/following.836f779de3b07196f4ec.png",
-    "index.html": "/follover/index.html",
-    "main.95580ab2.css.map": "/follover/static/css/main.95580ab2.css.map",
-    "main.cc092316.js.map": "/follover/static/js/main.cc092316.js.map",
-    "544.2b441a30.chunk.js.map": "/follover/static/js/544.2b441a30.chunk.js.map",
-    "10.f4b22fb3.chunk.js.map": "/follover/static/js/10.f4b22fb3.chunk.js.map",
-    "807.a7f6f99c.chunk.js.map": "/follover/static/js/807.a7f6f99c.chunk.js.map"
+    "main.css": "/follower/static/css/main.95580ab2.css",
+    "main.js": "/follower/static/js/main.5104e990.js",
+    "static/js/544.6befbe9e.chunk.js": "/follower/static/js/544.6befbe9e.chunk.js",
+    "static/js/10.09c88e8b.chunk.js": "/follower/static/js/10.09c88e8b.chunk.js",
+    "static/js/807.643c1665.chunk.js": "/follower/static/js/807.643c1665.chunk.js",
+    "static/media/Montserrat-SemiBold.ttf": "/follower/static/media/Montserrat-SemiBold.62b8eee010e3957d425f.ttf",
+    "static/media/Montserrat-Medium.ttf": "/follower/static/media/Montserrat-Medium.a281f04d4c8926e7dea1.ttf",
+    "static/media/Montserrat-Regular.ttf": "/follower/static/media/Montserrat-Regular.94bb495fba6077f669ed.ttf",
+    "static/media/following.png": "/follower/static/media/following.836f779de3b07196f4ec.png",
+    "index.html": "/follower/index.html",
+    "main.95580ab2.css.map": "/follower/static/css/main.95580ab2.css.map",
+    "main.5104e990.js.map": "/follower/static/js/main.5104e990.js.map",
+    "544.6befbe9e.chunk.js.map": "/follower/static/js/544.6befbe9e.chunk.js.map",
+    "10.09c88e8b.chunk.js.map": "/follower/static/js/10.09c88e8b.chunk.js.map",
+    "807.643c1665.chunk.js.map": "/follower/static/js/807.643c1665.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.95580ab2.css",
-    "static/js/main.cc092316.js"
+    "static/js/main.5104e990.js"
   ]
 }
