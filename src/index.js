@@ -14,7 +14,7 @@ import './fonts/Montserrat-SemiBold.ttf';
 //  <BrowserRouter basename={process.env.PUBLIC_URL}></BrowserRouter>
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="https://vadimvyalov.github.io/follover/">
+    <BrowserRouter basename="https://vadimvyalov.github.io/follower/">
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
           <App />

@@ -1,8 +1,8 @@
 {
-  "name": "follover",
+  "name": "follower",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://vadimvyalov.github.io/follover/",
+  "homepage": "https://vadimvyalov.github.io/follower/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",
