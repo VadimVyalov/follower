@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkfollower=self.webpackChunkfollower||[]).push([[544],{9544:function(e,t,s){s.r(t);var l=s(184);t.default=function(){return(0,l.jsxs)(l.Fragment,{children:[(0,l.jsx)("h2",{className:"font-['MontserratSemiBold'] font-semibold uppercase text-4xl text-[#373737] text-center mt-20",children:"Welcome!"}),(0,l.jsxs)("p",{className:"font-['MontserratSemiBold'] font-semibold  text-2xl text-[#373737] text-center mt-10",children:[" ","Go to Tweets page and following best user"]})]})}}}]);
+//# sourceMappingURL=544.39380a5b.chunk.js.map
