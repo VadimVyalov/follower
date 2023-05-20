@@ -1,19 +1,21 @@
 # Тестове завдання Follower
 
+![GitHub actions settings](./assets/follower.JPG)
 
 
 ## для виконання завдання використане:
 
-React для створення логіки роботи всіх частин RTKQ для запитів на сервер бекенду
-Persist для сбереження відмічених (зафоловленх) юзерів у localStorage Router для
-маршрутизації Для візуального оформлення використовувались:
-
-- Tailwind CSS
-- Style-componets
-- react-hot-toast
-- react-toastify
-- react-scroll
-- react-icons
+  - `React` для створення логіки роботи всіх частин проекту
+  - `RTKQ` для запитів на сервер бекенду
+  - `Persist` для сбереження відмічених (зафоловленх) юзерів у localStorage
+  - `Router` для маршрутизації 
+  - Для візуального оформлення використовувались:
+    - Tailwind CSS
+    - Style-componets
+    - react-hot-toast
+    - react-toastify
+    - react-scroll
+    - react-icons
 
 ## Завдання виконане в повному обсязі відносно до техгічного завдання
 
