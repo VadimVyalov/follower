@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 export const Container = ({ children }) => (
   <div className="  min-h-screen min-w-[480px]  bg-[#766A92]">
-    <div className="container max-w-7xl   my-0 mx-auto py-0 px-4 pb-16 ">
+    <div className="container max-w-7xl   my-0 mx-auto py-0 px-4 flex flex-col min-h-screen  ">
       {children}
     </div>
   </div>
@@ -11,11 +11,25 @@ export const Container = ({ children }) => (
 export const Header = ({ children }) => (
   <header
     className="flex items-center justify-between
-                 gap-4 px-0 py-4 mb-4 border-b 
-                 border-black border-solid "
+                 gap-4 px-0 py-4 mb-4 border-b-2 
+                 border-[#5736A3] border-solid "
   >
     <nav className="flex gap-4"> {children} </nav>
   </header>
+);
+
+export const Footer = ({ children }) => (
+  <div
+    className="flex items-center  px-0 py-4  border-t-2 
+                 border-[#5736A3] border-solid mt-auto text-center  "
+  >
+    <p
+      className="mx-auto text-center  font-['MontserratSemiBold'] font-semibold 
+       text-lg/[22px] text-[#373737]"
+    >
+      {children}
+    </p>
+  </div>
 );
 
 export const Link = ({ to, state, children }) => (

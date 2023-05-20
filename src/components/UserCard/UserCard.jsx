@@ -50,10 +50,12 @@ const UserCard = ({ userInfo }) => {
           alt={`${userInfo.name}`}
           title={`${userInfo.name}`}
         />
-        <p className="mb-4 font-['MontserratMedium'] font-medium uppercase text-xl/[24px] text-[#EBD8FF]">{`tweets ${userInfo.tweets} `}</p>
-        <p className="mb-7 font-['MontserratMedium'] font-medium uppercase text-xl/[24px] text-[#EBD8FF]">{`followers ${userInfo.followers
+        <p className="mb-4 font-['MontserratMedium'] font-medium uppercase text-xl/[24px] text-[#EBD8FF]">{`tweets ${userInfo.tweets
           .toString()
           .replace(/\B(?=(\d{3})+(?!\d))/g, ',')} `}</p>
+        <p className="mb-7 font-['MontserratMedium'] font-medium uppercase text-xl/[24px] text-[#EBD8FF]">{`followers ${userInfo.followers
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`}</p>
 
         <button
           onClick={() => handleFollow(userInfo.id)}

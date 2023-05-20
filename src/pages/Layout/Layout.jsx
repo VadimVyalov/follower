@@ -1,5 +1,6 @@
 import {
   Container,
+  Footer,
   Header,
   MenuLink,
 } from '../../components/SharedLayout/SharedLayout';
@@ -25,6 +26,7 @@ const Layout = () => {
         <ToastContainer />
         <Toaster position="top-center" reverseOrder={false} />
       </main>
+      <Footer> ©2023 Vadym Vialov </Footer>
     </Container>
   );
 };
