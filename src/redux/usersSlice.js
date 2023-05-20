@@ -7,18 +7,7 @@ const initialState = {
 const usersSlice = createSlice({
   name: 'users',
   initialState,
-  reducers: {
-    // setFollowing(state, { payload }) {
-    //   state.currentUsers.find((user) => {
-    //     if (user.id === payload) {
-    //       user.following = !user.following;
-    //       //user.following ? (user.followers += 1) : (user.followers -= 1);
-    //     }
-    //   });
-    //   const idx = state.following.findIndex((e) => e === payload);
-    //   idx < 0 ? state.following.push(payload) : state.following.splice(idx, 1);
-    // },
-  },
+  reducers: {},
   extraReducers: builder => {
     builder
       .addMatcher(
@@ -38,15 +27,12 @@ const usersSlice = createSlice({
       )
       .addMatcher(
         usersApi.endpoints.setFollowers.matchFulfilled,
-        // eslint-disable-next-line
         (state, { payload }) => {
           // eslint-disable-next-line
           state.currentUsers.find(user => {
             if (user.id === payload.id) {
               user.following = !user.following;
-              // user.following ? (user.followers += 1) : (user.followers -= 1);
               user.followers = payload.followers;
-              console.log('------');
             }
           });
 
@@ -59,4 +45,3 @@ const usersSlice = createSlice({
   },
 });
 export const usersReducer = usersSlice.reducer;
-// export const { setFollowing } = usersSlice.actions;

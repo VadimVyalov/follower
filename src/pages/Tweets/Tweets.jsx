@@ -1,82 +1,81 @@
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import { TbArrowBackUp } from "react-icons/tb";
-import Loader from "../../components/Loader/Loader";
-import Searchbar from "../../components/Searchbar/Searchbar";
-import UsersList from "../../components/UsersList/UsersList";
-//import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import { useGetUsersQuery } from "../../redux/usersApi";
-import { useSelector } from "react-redux";
-import { selectCurrentUsers } from "../../redux/selectors";
+import { useEffect, useState } from 'react';
+import Loader from '../../components/Loader/Loader';
+import Searchbar from '../../components/Searchbar/Searchbar';
+import UsersList from '../../components/UsersList/UsersList';
+import { useGetUsersQuery } from '../../redux/usersApi';
+import { useSelector } from 'react-redux';
+import { selectfiltredUser, selectCurrentUsers } from '../../redux/selectors';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { TbArrowBackUp, TbArrowBarToUp } from 'react-icons/tb';
+import ErrorMessage from 'components/ErrorMessage/ErrorMessage';
+import { ButtonLink } from 'components/SharedLayout/SharedLayout';
+
+const Scroll = require('react-scroll');
 
 const Tweets = () => {
+  const scroll = Scroll.animateScroll;
   const location = useLocation();
   const navigate = useNavigate();
-  const backLinkHref = location.pathname.from ?? "/";
+  const backLinkHref = location.pathname.from ?? '/';
   const [page, setPage] = useState(1);
-  const { data, isLoading, isError } = useGetUsersQuery(page);
-  const users = useSelector(selectCurrentUsers);
-
-  //const [searchString, setSearchString] = useSearchParams("");
-
+  const { data, isLoading, isFetching, isError } = useGetUsersQuery(page);
+  const users = useSelector(selectfiltredUser);
+  const totalLoads = useSelector(selectCurrentUsers);
   const [loadMore, setLoadMore] = useState(true);
 
   const showList = !isLoading && !isError;
-  const showLoader = isLoading && !isError;
+  const showLoader = (isFetching || isLoading) && !isError;
+  const title = `Load user card  ${totalLoads.length} : Show user card ${users.length}`;
 
   useEffect(() => {
-    if (data?.length < 3) {
-      setLoadMore(false);
-    }
-  }, [data]);
+    data?.length < 3 && setLoadMore(false);
+    isError && ErrorMessage('Щось пішло не так');
+  }, [data, isError]);
 
-  const onSubmit = (evt) => {
-    evt.preventDefault();
-
-    const inputString = evt.currentTarget.elements.query;
-    const inputValue = evt.currentTarget.elements.query.value.trim();
-    if (!inputValue) {
-      toast.error(`Введи `);
-      return;
-      // } else if (options.query === inputValue) {
-      //   toast.error(`Вже шукали "${inputValue}" `);
-      //   inputString.value = "";
-      //   return;
-    }
-
-    // setSearchString({ query: inputValue });
-    // setOptions((prev) => ({ ...prev, query: inputValue }));
-    inputString.value = "";
+  const handleClick = evt => {
+    evt.target.blur();
+    setPage(page + 1);
+    scroll.scrollToBottom();
   };
 
   return (
-    <>
-      <Searchbar onSubmit={onSubmit} />
-      <button
-        onClick={() => navigate(backLinkHref)}
-        className="bg-sky-200 px-3 mb-4 rounded-md flex items-center gap-2
-                    border border-stone-400 border-solid 
-                  hover:bg-sky-400 hover:shadow hover:shadow-sky-500"
-      >
-        <TbArrowBackUp />
-        Back to home
-      </button>
-      {showLoader && <Loader />}
-      {showList && (
-        <UsersList title={"У трендах"} users={users} location={location} />
-      )}
-      {loadMore && (
+    <div className="w-full mx-auto text-center">
+      <Searchbar />
+
+      {showList && <UsersList title={title} users={users} />}
+      <div className="flex gap-10 justify-center">
+        <ButtonLink link={() => navigate(backLinkHref)}>
+          {' '}
+          <span className="text-[30px]">
+            <TbArrowBackUp />
+          </span>
+          Go home
+        </ButtonLink>
+
         <button
-          onClick={() => setPage(page + 1)}
-          className="mb-9  w-[196px] h-[50px] bg-[#EBD8FF] 
+          disabled={!loadMore}
+          onClick={handleClick}
+          style={{
+            '--isloadMore': loadMore ? '#EBD8FF' : '',
+            '--isNoloadMore': loadMore ? '#5CD3A8' : '',
+          }}
+          className="mb-9 mt-9 w-[196px] h-[50px] bg-[var(--isloadMore)] hover:bg-[var(--isNoloadMore)] rounded-xl
       font-['MontserratSemiBold'] font-semibold uppercase text-lg/[22px] text-[#373737]
-      shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]"
+      shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-all duration-[250]   hover:shadow-mm 
+      hover:shadow-[#373737] hover:scale-[1.01] "
         >
-          Load more
+          {loadMore ? 'Load' : 'No'} more
+          {showLoader && <Loader />}
         </button>
-      )}
-    </>
+
+        <ButtonLink link={() => scroll.scrollToTop()}>
+          Go top
+          <span className="text-[30px]">
+            <TbArrowBarToUp />
+          </span>
+        </ButtonLink>
+      </div>
+    </div>
   );
 };
 

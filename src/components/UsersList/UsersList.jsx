@@ -1,26 +1,18 @@
-import PropTypes from "prop-types";
-import UserCard from "../UserCard/UserCard";
+import PropTypes from 'prop-types';
+import UserCard from '../UserCard/UserCard';
 const UsersList = ({ title = null, users }) => (
   <>
     {title && (
-      <h1 className=" text-center text-2xl font-semibold text-stone-800">
+      <h1 className=" mt-4 text-center text-2xl font-semibold text-stone-800">
         {title}
       </h1>
     )}
     <ul
-      className="gap-6 grid pt-6
-                grid-cols-1
-                lg:grid-cols-2 
-                xl:grid-cols-3
-  "
+      className="gap-6 grid pt-6  grid-cols-1
+                lg:grid-cols-2   xl:grid-cols-3 "
     >
-      {users.map((user) => (
-        <li
-          key={user.id}
-          //   className="rounded-md border border-black border-solid overflow-hidden
-          // transition-all duration-300
-          // hover:shadow-mm hover:shadow-sky-300 hover:scale-105 "
-        >
+      {users.map(user => (
+        <li key={user.id} className=" justify-center mx-auto ">
           <UserCard userInfo={user} />
         </li>
       ))}

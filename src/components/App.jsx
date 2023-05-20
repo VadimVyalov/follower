@@ -2,7 +2,6 @@ import { lazy } from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import Layout from '../pages/Layout/Layout';
-// const Layout = lazy(() => import('../pages/Layout/Layout'));
 const Home = lazy(() => import('../pages/Home/Home'));
 const Tweets = lazy(() => import('../pages/Tweets/Tweets'));
 

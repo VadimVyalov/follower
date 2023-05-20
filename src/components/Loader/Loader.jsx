@@ -3,10 +3,10 @@ import { LoaderWrapper } from './Loader.stiled';
 const Loader = () => (
   <LoaderWrapper>
     <RotatingLines
-      strokeColor="#3f51b5"
+      strokeColor="#5CD3A8"
       strokeWidth="4"
       animationDuration="1"
-      width="70"
+      width="120"
       visible={true}
     />
   </LoaderWrapper>

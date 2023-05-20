@@ -1,8 +1,10 @@
 import { NavLink } from 'react-router-dom';
 
 export const Container = ({ children }) => (
-  <div className="container max-w-7xl  my-0 mx-auto py-0 px-4 pb-16">
-    {children}
+  <div className="  min-h-screen min-w-[480px]  bg-[#766A92]">
+    <div className="container max-w-7xl   my-0 mx-auto py-0 px-4 pb-16 ">
+      {children}
+    </div>
   </div>
 );
 
@@ -27,15 +29,17 @@ export const Link = ({ to, state, children }) => (
 );
 
 export const MenuLink = ({ to, children }) => {
-  const link =
-    'py-2 px-8 rounded-md hover:bg-sky-400 hover:shadow hover:shadow-sky-500 border  border-stone-400 border-solid ';
-  const activeLink = `${link} bg-sky-400  text-white`;
-  const unactiveLink = `${link} bg-sky-200 text-black`;
-
   return (
     <NavLink
       to={to}
-      className={({ isActive }) => (isActive ? activeLink : unactiveLink)}
+      style={({ isActive }) => {
+        return {
+          '--isActive': isActive ? '#5CD3A8' : '#EBD8FF',
+        };
+      }}
+      className="p-2 w-[120px] h-[40px] bg-[var(--isActive)] rounded-xl text-center
+      font-['MontserratSemiBold'] font-semibold uppercase text-lg/[22px] text-[#373737]
+      shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-all duration-[250]   hover:shadow-mm hover:shadow-[#373737] hover:scale-[1.01]"
     >
       {children}
     </NavLink>
@@ -46,9 +50,10 @@ export const ButtonLink = ({ link, children }) => {
   return (
     <button
       onClick={() => link()}
-      className="bg-sky-200 px-3 rounded-md flex items-center gap-2
-                    border border-stone-400 border-solid 
-                  hover:bg-sky-400 hover:shadow hover:shadow-sky-500"
+      className="flex items-center justify-evenly mb-9 mt-9 pr-4 w-[196px] h-[50px] rounded-xl
+      font-['MontserratSemiBold'] font-semibold uppercase text-lg/[22px] text-[#373737]
+      shadow-[0_4px_4px_rgba(0,0,0,0.25)] transition-all duration-[250]   hover:shadow-mm
+       hover:shadow-[#373737] hover:scale-[1.01] hover:bg-[#5CD3A8] bg-[#EBD8FF]"
     >
       {children}
     </button>
